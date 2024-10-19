@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DLZ WebUI</title>
+  <title>DLZ</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -60,7 +60,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
         <div class="row align-items-center">
-            <div class="col-lg-8">
+            <div class="col-lg-7">
                 <h1>Dan Lester Zapatero</h1>
                 <p>I'm <span class="typed" data-typed-items="web designer, python programmer"></span></p>
                 <div class="social-links">
@@ -70,12 +70,13 @@
                 </div>
                 <a href="assets/Dan_Lester_Zapatero.pdf" class="btn btn-primary mt-3" download>Download My CV</a>
             </div>
-            <div class="col-lg-4">
-                <img src="assets/img/photo.png" class="img-fluid" alt="profile-photo">
+            <div class="col-lg-5">
+                <img src="assets/img/photo.png" class="img-fluid profile-photo" alt="profile-photo">
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- End Hero -->
 
@@ -107,7 +108,7 @@
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>zdanlester@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
@@ -232,7 +233,142 @@
     </section>
     <!-- End Resume Section -->
 
-   
+   <!-- ======= Certificates Section ======= -->
+<!-- ======= Certificates Section ======= -->
+<!-- ======= Certificates Section ======= -->
+<section id="certificates" class="certificates section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Certificates</h2>
+      <p>Here are some of the certifications I've earned to enhance my skills and expertise:</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="certificate-box">
+          <img src="assets/img/aws.png" alt="Introduction to Cloud Certificate" class="img-fluid certificate-img" onclick="openModal('modal1')">
+          <h4>Introduction To Cloud Certificate</h4>
+          <p>Issued by: AWS Academy</p>
+          <p>Date: November 2023</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="certificate-box">
+          <img src="assets/img/great.png" alt="Software Testing Certificate" class="img-fluid certificate-img" onclick="openModal('modal2')">
+          <h4>Software Testing Certificate</h4>
+          <p>Issued by: Great Learning</p>
+          <p>Date: August 2024</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="certificate-box">
+          <img src="assets/img/oracle.png" alt="Database Foundation Certificate" class="img-fluid certificate-img" onclick="openModal('modal3')">
+          <h4>Database Foundation Certificate</h4>
+          <p>Issued by: Oracle Academy</p>
+          <p>Date: March 2023</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <span class="close" onclick="closeModal('modal1')">&times;</span>
+  <img class="modal-content" id="img1">
+</div>
+
+<div id="modal2" class="modal">
+  <span class="close" onclick="closeModal('modal2')">&times;</span>
+  <img class="modal-content" id="img2">
+</div>
+
+<div id="modal3" class="modal">
+  <span class="close" onclick="closeModal('modal3')">&times;</span>
+  <img class="modal-content" id="img3">
+</div>
+
+<style>
+  /* Styling the certificate images */
+  .certificate-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer; /* Shows that the image is clickable */
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sits on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Black with opacity */
+  }
+
+  /* Modal Content (Image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+
+  /* Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+
+<!-- JavaScript to Handle Modal Opening/Closing -->
+<script>
+  function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "block";
+    
+    // Set the image for the specific modal
+    var imgSrc;
+    if (modalId === 'modal1') {
+      imgSrc = 'assets/img/aws.png';
+    } else if (modalId === 'modal2') {
+      imgSrc = 'assets/img/great.png';
+    } else if (modalId === 'modal3') {
+      imgSrc = 'assets/img/oracle.png';
+    }
+    
+    var imgElement = modal.querySelector('.modal-content');
+    imgElement.src = imgSrc;
+  }
+
+  function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "none";
+  }
+</script>
+
+
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
